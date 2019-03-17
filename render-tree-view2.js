@@ -125,7 +125,7 @@
     //readd DOM element
     addTreeControlDomElement();
 
-    var assetsData = null; //[{"Id":"86078056-21d1-4ea8-8abb-ff71b0b27448","Path":"0","Name":"QSGTL","ChildAssets":[{"Id":"32d1fc47-82c8-4fef-bff1-6ff236d92e10","Path":"0.0","Name":"PLANTS","ChildAssets":[{"Id":"45ba8d0e-241d-48b9-ab11-b455f5862887","Path":"0.0.0","Name":"Assets","ChildAssets":[{"Id":"0981b5df-8503-41cc-b775-17f445bdfce8","Path":"0.0.0.0","Name":"1_FGP","ChildAssets":[{"Id":"7fea9e89-150a-41fd-84a2-a9507a3422c8","Path":"0.0.0.0.0","Name":"1A","ChildAssets":null,"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Equipment","totalChildrenCount":34,"selectedChildrenCount":0}],"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Unit","totalChildrenCount":84,"selectedChildrenCount":0},{"Id":"d3af6538-12e5-4dc0-a8be-f1f5d2e543d7","Path":"0.0.0.1","Name":"2_UTL","ChildAssets":null,"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Unit","totalChildrenCount":106,"selectedChildrenCount":0},{"Id":"04224935-7487-4985-a72b-d34d6f57ef1c","Path":"0.0.0.2","Name":"3_GTL","ChildAssets":[{"Id":"bea5d0bd-a6c0-40b6-9770-b78813e3fe5a","Path":"0.0.0.2.0","Name":"3A","ChildAssets":null,"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Equipment","totalChildrenCount":68,"selectedChildrenCount":0},{"Id":"d940a730-b94b-4f23-80fd-2624ae669bc2","Path":"0.0.0.2.1","Name":"3B","ChildAssets":null,"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Equipment","totalChildrenCount":66,"selectedChildrenCount":0},{"Id":"06ccedba-9c77-4708-a27d-3bf51f45aacd","Path":"0.0.0.2.2","Name":"MAINT","ChildAssets":[{"Id":"a76ec4e2-4f3e-4f42-b87b-1bfb3a5c05fd","Path":"0.0.0.2.2.0","Name":"HPS1ES1","ChildAssets":null,"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Equipment","totalChildrenCount":5,"selectedChildrenCount":0},{"Id":"39912928-2bfc-40bb-a63b-3c2a4bba0f33","Path":"0.0.0.2.2.1","Name":"HPS2ES1","ChildAssets":null,"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Equipment","totalChildrenCount":5,"selectedChildrenCount":0}],"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Equipment","totalChildrenCount":19,"selectedChildrenCount":0}],"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Unit","totalChildrenCount":154,"selectedChildrenCount":0}],"checked":false,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Area","totalChildrenCount":423,"selectedChildrenCount":0}],"checked":true,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Plant","totalChildrenCount":6771,"selectedChildrenCount":2101}],"checked":true,"OPLinks":[],"Count":0,"Selectable":true,"AssetType":"Site","totalChildrenCount":6772,"selectedChildrenCount":2102}];
+    var assetsData = null; 
     if (
       siteHierarchy &&
       siteHierarchy.Sites &&
@@ -193,7 +193,7 @@
       }
       */
       
-     triggerRenderWithDelay(0,noOfTimesToRender,4000);
+     triggerRenderWithDelay(0,noOfTimesToRender,10000);
 
     });
 
