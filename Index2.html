@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<base href="https://demos.telerik.com/kendo-ui/treeview/checkboxes" />-->
+    <style>
+      html {
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+    <title>Kendo UI - TreeView - Memory Leak</title>
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-material.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.material.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.material.mobile.min.css"
+    />
+
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+    <!--<script src="https://ramprasads87.github.io/assetHierarchy.js"></script>-->
+    <script src="https://ramprasads87.github.io/assetHierarchyExpanded.js"></script>
+    <script src="render-tree-view2.js"></script>
+    <!--<script src="https://ramprasads87.github.io/render-tree-view.js"></script>-->
+
+    <style>
+      .tree-control .k-sprite {
+        background-image: url("https://demos.telerik.com/kendo-ui/content/web/treeview/coloricons-sprite.png");
+      }
+
+      .rootfolder {
+        background-position: 0 0;
+      }
+      .folder {
+        background-position: 0 -16px;
+      }
+      .pdf {
+        background-position: 0 -32px;
+      }
+      .html {
+        background-position: 0 -48px;
+      }
+      .image {
+        background-position: 0 -64px;
+      }
+    </style>
+
+    <script
+      class="rf-filter-scope-node-template-asset"
+      type="text/kendo-ui-template"
+    >
+      <span title='#: item.Name #' data-selectable='#: item.Selectable #'> #: item.Name # </span>
+    </script>
+
+    <script
+      class="rf-filter-scope-asset-checkbox-template"
+      type="text/kendo-ui-template"
+    >
+      <input type='checkbox'
+             # if (!item.Selectable) { # class='not-selectable' # } #
+             # if (item.checked) { # checked # } # />
+      # if (item.totalChildrenCount > 1 && ((!item.checked && item.selectedChildrenCount == (item.totalChildrenCount - 1)) || (item.checked && item.selectedChildrenCount == item.totalChildrenCount))) { #
+      <span title='All children assets selected' class='icon-dyn-scope icon-dyn-scope-asset-full'></span>
+      # } else if (item.totalChildrenCount > 1 && ((!item.checked && item.selectedChildrenCount == 0) || (item.checked && item.selectedChildrenCount == 1))) { #
+      <span title='None of the children assets selected' class='icon-dyn-scope icon-dyn-scope-asset-none'></span>
+      # } else if (item.totalChildrenCount > 1 && ((!item.checked && item.selectedChildrenCount < (item.totalChildrenCount - 1)) || (item.checked && item.selectedChildrenCount < item.totalChildrenCount))) { #
+      <span title='Few of the children assets are selected' class='icon-dyn-scope icon-dyn-scope-asset-half'></span>
+      # } #
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div style="width:200px;">
+          <span>No of times to render:</span>
+          <input id="no-of-times-to-render" 
+              value="10" 
+              title="No of times to render" 
+              style="width: 100%;float:left;" />
+      </div>
+      <button 
+      style="height:36px;"
+      class="btn-rerender-tree">Render tree control</button>
+      <div style="margin-top:20px;">
+        <h4>Tree Control</h4>
+      </div>
+      <div class="tree-control-container">
+        <div class="tree-control"></div>
+      </div>
+    </div>
+  </body>
+</html>
