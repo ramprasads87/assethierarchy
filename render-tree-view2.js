@@ -193,7 +193,7 @@
       }
       */
       
-     triggerRenderWithDelay(0,noOfTimesToRender,4000);
+     triggerRenderWithDelay(0,noOfTimesToRender,2000);
 
     });
 
