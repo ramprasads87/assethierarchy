@@ -140,6 +140,7 @@
     createTreeControl(assetsData);
 
     //alert('done');
+    
   }
 
   function addTreeControlDomElement() {
@@ -151,6 +152,7 @@
     if(currentIterationNo < noOfTimesToRun){
       rerender();
       currentIterationNo++;
+      $("#render-iteration").text(currentIterationNo);
 
       setTimeout(function(){
         triggerRenderWithDelay(currentIterationNo, noOfTimesToRun);
